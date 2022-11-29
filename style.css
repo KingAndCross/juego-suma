@@ -1,0 +1,164 @@
+:root {
+    --green: #2ecc71;
+    --red: #e74c3c;
+    --bg-color: #74b9ff;
+}
+
+html {
+    font-family: 'Signika Negative', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    padding: 20px;
+    font-size: 50px;
+    color: white;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 7px;
+    box-sizing: content-box;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+@keyframes fade-in-animate {
+    from {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.sumando {
+    font-size: 90px;
+    color: var(--bg-color);
+    animation: fade-in-animate 0.5s ease-in;
+    padding: 10px;
+    margin: 0;
+}
+
+.sumando.rojo {
+    color: var(--red);
+}
+
+.sumando.verde {
+    color: var(--green);
+}
+
+.settings {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 20px;
+    width: 100%;
+    height: 100px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.settings.hidden,
+.change-num.hidden,
+.total.hidden {
+    overflow: hidden;
+    padding: 0;
+    height: 0;
+    transition: 0.5s;
+    border: none;
+}
+
+.change-num {
+    width: fit-content;
+    cursor: pointer;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.change-num:hover {
+    color: #fff;
+    background-color: var(--bg-color);
+    border-color: var(--bg-color);
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.settings-btn {
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: visible;
+        margin: 0;
+    }
+
+    header {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .settings {
+        padding: 2px;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 200px;
+        font-size: 12px;
+        width: 100px;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+}

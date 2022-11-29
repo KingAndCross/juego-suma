@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego Sumas</title>
+</head>
+
+<header>¿Cuál es el resultado de la suma?</header>
+
+<div class="wrapper">
+    <h2 class="sumando">0</h2>
+    <h2 class="total">El total es: 0</h2>
+    <button class="change-num">Comenzar</button>
+    <button class="settings-btn">Opciones</button>
+    <div class="settings">
+        <div class="slider">
+            <input type="range" id="tiempo" name="tiempo" min="1" max="10">
+            <label for="volume">Tiempo (s)</label>
+        </div>
+        <div class="slider">
+            <input type="range" id="cantidad" name="cantidad" min="3" max="15">
+            <label for="volume">Cantidad</label>
+        </div>
+        <div class="slider">
+            <input type="range" id="rango" name="rango" min="3" max="15">
+            <label for="volume">Rango</label>
+        </div>
+        <div class="radio-btn">
+            <input type="checkbox" name="negativos" id="neg-num" checked>
+            <label for="volume">¿negativos?</label>
+        </div>
+    </div>
+
+</div>
+
+<body>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
