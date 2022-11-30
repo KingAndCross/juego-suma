@@ -1,5 +1,3 @@
-// esto es una prueba
-
 const num = document.getElementsByClassName("sumando");
 const btn = document.getElementsByClassName("change-num");
 const settingsBtn = document.getElementsByClassName("settings-btn");
