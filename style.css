@@ -8,6 +8,7 @@ html {
     font-family: 'Signika Negative', sans-serif;
     width: 100vw;
     height: 100vh;
+    max-height: fit-content;
 }
 
 header {
@@ -91,6 +92,7 @@ body {
     border: none;
 }
 
+.show-result,
 .change-num {
     width: fit-content;
     cursor: pointer;
@@ -109,11 +111,17 @@ body {
     border-color: #0d6efd;
 }
 
+.show-result.hidden {
+    display: none;
+}
+
+.show-result:hover,
 .change-num:hover {
     color: #fff;
     background-color: var(--bg-color);
     border-color: var(--bg-color);
 }
+
 
 .slider {
     display: flex;

@@ -1,6 +1,7 @@
 const num = document.getElementsByClassName("sumando");
 const btn = document.getElementsByClassName("change-num");
 const settingsBtn = document.getElementsByClassName("settings-btn");
+const resultBtn = document.getElementsByClassName("show-result");
 const totalStr = document.getElementsByClassName("total");
 const wrapper = document.getElementsByClassName("wrapper");
 const settings = document.getElementsByClassName("settings");
@@ -11,6 +12,8 @@ let choosenTime = 1;
 
 btn[0].addEventListener("click", nuevoJuevo);
 settingsBtn[0].addEventListener("click", () => showSettings(settings[0]));
+resultBtn[0].addEventListener("click", showResult);
+
 
 function showSettings(element, hide = false) {
     if (hide === true) {
@@ -74,6 +77,13 @@ async function changeNum(num_array, time) {
     }
 };
 
+function showResult() {
+    showSettings(btn[0]);
+    totalStr[0].innerText = `El total es: ${total}`;
+    showSettings(totalStr[0]);
+    showSettings(resultBtn[0]);
+}
+
 async function nuevoJuevo() {
     total = 0;
     i = 0;
@@ -88,10 +98,7 @@ async function nuevoJuevo() {
     newArray = createNewArray(amountOfNums, rangeOfNums, negativeNums);
     await changeNum(newArray, choosenTime);
     changeText("¿Cuánto es el total?")
-    await sleep(2 * 1000);
-    totalStr[0].innerText = `El total es: ${total}`;
-    showSettings(btn[0]);
-    showSettings(totalStr[0]);
+    showSettings(resultBtn[0]);
 };
 
 function elementValue(id) {
